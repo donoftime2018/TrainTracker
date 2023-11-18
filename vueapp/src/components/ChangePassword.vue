@@ -4,7 +4,6 @@
 </script>
 
 <template>
-    <h1>Update Password</h1>
 </template>
 
 <style>

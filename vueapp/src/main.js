@@ -12,7 +12,7 @@ import Register from "./components/Register.vue"
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        { path: '/', component: Dashboard },
+        { path: '/dashboard', component: Dashboard },
         { path: '/login', component: Login },
         { path: '/register', component: Register },
         { path: '/changePassword', component: ChangePassword }

@@ -9,5 +9,5 @@
 </template>
 
 <style>
-    npm i @vue/compiler-sfc
+
 </style>

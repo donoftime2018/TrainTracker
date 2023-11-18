@@ -1,11 +1,5 @@
-<script setup>
-    import { ref } from 'vue';
-    console.log("Register User")
-</script>
-
 <template>
-    <h1>Register</h1>
+    <h1 class="text-blue-600 dark:text-blue-500">
+       Register
+    </h1>
 </template>
-
-<style>
-</style>

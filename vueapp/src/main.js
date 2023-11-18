@@ -22,3 +22,7 @@ const router = createRouter({
 const app = createApp(App)
 app.use(router);
 app.mount('#app');
+app.component('Login', Login)
+app.component("Dashboard", Dashboard)
+app.component("Register", Register)
+app.component("ChangePassword", ChangePassword)

@@ -1,11 +1,5 @@
-<script setup>
-    import { ref } from 'vue';
-    console.log("Dashboard")
-</script>
-
 <template>
-    <h1>{{title}}</h1>
+   <h1 style="font-size: large" class="text-blue-600 dark:text-blue-500">
+      Dashboard
+    </h1>
 </template>
-
-<style>
-</style>

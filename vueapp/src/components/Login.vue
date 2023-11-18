@@ -1,9 +1,5 @@
-<script setup>
-    import { ref } from 'vue';
-    console.log("Login")
-
-</script>
-
-<style>
-
-</style>
+<template>
+    <h1 class="text-blue-600 dark:text-blue-500">
+       Login
+    </h1>
+</template>

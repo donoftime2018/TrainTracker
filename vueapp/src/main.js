@@ -17,8 +17,8 @@ const router = createRouter({
         { path: '/register', component: Register },
         { path: '/changePassword', component: ChangePassword }
     ]
-})
+});
 
 const app = createApp(App)
-app.use(router)
-app.mount('#app')
+app.use(router);
+app.mount('#app');

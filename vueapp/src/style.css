@@ -2,8 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: Montserrat;
+    src: url("https://fonts.googleapis.com/css?family=Montserrat");
+}
+
 #app {
     background: url("../public/background_img.jpg") center no-repeat;
+    font-family: Montserrat;
     background-size:auto;
     height: 100vh;
     width: 100%;

@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#app {
+    background: url("../public/background_img.jpg") center no-repeat;
+    background-size:auto;
+    height: 100vh;
+    width: 100%;
+}

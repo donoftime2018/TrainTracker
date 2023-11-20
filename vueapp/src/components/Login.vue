@@ -1,5 +1,5 @@
 <script setup>
-    import { createRouter } from "vue-router";
+   
 </script>
 
 <template>
@@ -24,11 +24,20 @@
                     <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Password goes here...">
                 </div>
 
+                <div class="mb-4 flex justify-center">
+                    <button type="submit" class="bg-[#0039a6] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Sign In
+                    </button>
+                </div>
+
                 <div class="text-center flex flex-col">
                     <router-link to="/register">Need to register?</router-link>
                     <router-link to="/changePassword">Forgot password?</router-link>
                 </div>
-              
+
+
+
+
             </form>
         </div>
     </div>

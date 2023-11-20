@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="text-center flex flex-col">
-                    <a href="/register" onclick="">Need to register?</a>
+                    <a href="/register">Need to register?</a>
                     <a href="/changePassword">Forgot password?</a>
                 </div>
               

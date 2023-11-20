@@ -8,7 +8,7 @@
 }
 
 #app {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)), url("../public/background_img.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.7)), url("../public/background_img.jpg");
     background-position: center;
     background-repeat: no-repeat;
     font-family: IFC;

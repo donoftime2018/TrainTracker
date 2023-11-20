@@ -3,7 +3,7 @@
         <div class="mt-20 w-full max-w-xl">
             <form class="bg-[#EE0034] text-white shadow-md rounded px-12 pt-6 pb-8 mb-4">
                 <div class="mb-4">
-                    <h1 class="text-center font-bold text-2xl underline">Register</h1>
+                    <h1 class="text-center font-bold text-2xl underline">Change Password</h1>
                 </div>
 
                 <div class="mb-4">

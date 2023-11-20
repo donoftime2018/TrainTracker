@@ -1,5 +1,5 @@
 <script setup>
-    
+    import { createRouter } from "vue-router";
 </script>
 
 <template>
@@ -25,8 +25,8 @@
                 </div>
 
                 <div class="text-center flex flex-col">
-                    <a href="/register">Need to register?</a>
-                    <a href="/changePassword">Forgot password?</a>
+                    <router-link to="/register">Need to register?</router-link>
+                    <router-link to="/changePassword">Forgot password?</router-link>
                 </div>
               
             </form>

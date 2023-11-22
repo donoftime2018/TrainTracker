@@ -22,6 +22,14 @@ namespace webapi.Controllers
                     string XMLData = await res.Content.ReadAsStringAsync();
                     XmlDocument xmlDoc = new XmlDocument();
                     xmlDoc.LoadXml(XMLData);
+
+                    XmlNodeList etaElems = xmlDoc.GetElementsByTagName("eta");
+                    
+                    for (int i = 0; i < etaElems.Count; i++)
+                    {
+                        Console.WriteLine(etaElems[i].InnerXml);
+                    }
+
                     string jsonData = JsonConvert.SerializeXmlNode(xmlDoc);
                     return Ok(jsonData);
                 }

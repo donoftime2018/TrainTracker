@@ -1,7 +1,5 @@
 <template>
-  <div>
-      {{trainData}}
-  </div>
+    {{trainData}}
 </template>
 
 <script>
@@ -11,7 +9,7 @@
     export default {
         data() {
             return {
-                trainData: null
+                trainData: []
             };
         },
         mounted() {

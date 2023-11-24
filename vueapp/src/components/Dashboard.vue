@@ -15,7 +15,7 @@
         mounted() {
             console.log("Mounted!")
 
-            axios.get("http://localhost:5118/api/getJsonData").then(response => {
+            axios.get("http://localhost:5118/api/getStationData").then(response => {
                 console.log(response);
                 this.trainData = response.data
             })

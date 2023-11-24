@@ -3,15 +3,17 @@ using Newtonsoft.Json;
 using System.Net.Http;
 using System.Xml;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json.Nodes;
+using System.Collections;
 
 namespace webapi.Controllers
 {
-    [Route("api/getJsonData")]
     [ApiController]
     public class ApiController : ControllerBase
     {
-        [HttpGet]      
-        public async Task<ActionResult<String>> GetData()
+        [HttpGet]
+        [Route("api/getStationData")]
+        public async Task<ActionResult<ArrayList>> GetData()
         {
             using (HttpClient client = new HttpClient())
             {
@@ -24,14 +26,21 @@ namespace webapi.Controllers
                     xmlDoc.LoadXml(XMLData);
 
                     XmlNodeList etaElems = xmlDoc.GetElementsByTagName("eta");
-                    
+                    ArrayList etaData = new ArrayList();
+                  
+
                     for (int i = 0; i < etaElems.Count; i++)
                     {
+                        string stationArrival = etaElems[i].ChildNodes[2].InnerXml;
+                        string stationDestination = etaElems[i].ChildNodes[7].InnerXml;
+                        string stationArrDesc = etaElems[i].ChildNodes[3].InnerXml;
+
+                        string[] infoArray = {stationArrDesc, stationArrival, stationDestination};
                         Console.WriteLine(etaElems[i].InnerXml);
+                        etaData.Add(infoArray);
                     }
 
-                    string jsonData = JsonConvert.SerializeXmlNode(xmlDoc);
-                    return Ok(jsonData);
+                    return Ok(etaData);
                 }
 
                 else
@@ -44,4 +53,4 @@ namespace webapi.Controllers
 
 
         }
-    }
+}

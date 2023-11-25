@@ -1,15 +1,17 @@
 <template>
+    {{date}}
     {{trainData}}
 </template>
 
 <script>
     import { onMounted } from "vue";
     import axios from "axios";
-
+    
     export default {
         data() {
             return {
-                trainData: []
+                trainData: [],
+                date: null
             };
         },
         mounted() {
@@ -17,7 +19,9 @@
 
             axios.get("http://localhost:5118/api/getStationData").then(response => {
                 console.log(response);
-                this.trainData = response.data
+                this.trainData = response.data.ctatt.eta
+                this.date = response.data.ctatt.tmst
+                
             })
         }
     }

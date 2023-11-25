@@ -5,52 +5,35 @@ using System.Xml;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json.Nodes;
 using System.Collections;
+using System.Xml.Linq;
+using NPOI.SS.Formula.Functions;
+using Microsoft.AspNetCore.Mvc.TagHelpers;
+using System.Data;
+using Newtonsoft.Json.Linq;
 
 namespace webapi.Controllers
 {
     [ApiController]
     public class ApiController : ControllerBase
     {
+        //private HttpResponseMessage res;
+
         [HttpGet]
         [Route("api/getStationData")]
-        public async Task<ActionResult<ArrayList>> GetData()
+        public IActionResult GetData()
         {
-            using (HttpClient client = new HttpClient())
-            {
-                HttpResponseMessage res = await client.GetAsync("https://lapi.transitchicago.com/api/1.0/ttarrivals.aspx?key=f3668ac334484bc88b6b2e7778a013bd&mapid=40380");
+                XmlDocument doc = new XmlDocument();
+                doc.Load("https://lapi.transitchicago.com/api/1.0/ttarrivals.aspx?key=f3668ac334484bc88b6b2e7778a013bd&mapid=40380");
 
-                if (res.IsSuccessStatusCode)
-                {
-                    string XMLData = await res.Content.ReadAsStringAsync();
-                    XmlDocument xmlDoc = new XmlDocument();
-                    xmlDoc.LoadXml(XMLData);
+                string jsonText = JsonConvert.SerializeXmlNode(doc);
+                dynamic data = JObject.Parse(jsonText);
 
-                    XmlNodeList etaElems = xmlDoc.GetElementsByTagName("eta");
-                    ArrayList etaData = new ArrayList();
-                  
-
-                    for (int i = 0; i < etaElems.Count; i++)
-                    {
-                        string stationArrival = etaElems[i].ChildNodes[2].InnerXml;
-                        string stationDestination = etaElems[i].ChildNodes[7].InnerXml;
-                        string stationArrDesc = etaElems[i].ChildNodes[3].InnerXml;
-
-                        string[] infoArray = {stationArrDesc, stationArrival, stationDestination};
-                        Console.WriteLine(etaElems[i].InnerXml);
-                        etaData.Add(infoArray);
-                    }
-
-                    return Ok(etaData);
-                }
-
-                else
-                {
-                    return StatusCode((int)res.StatusCode, "Error fetching XML data");
-                }
-            }
-                
-            }
-
-
+                return Ok(data);
+           
+                 
         }
+
+    }
+
+
 }

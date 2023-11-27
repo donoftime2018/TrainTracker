@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-wrap gap-4 justify-between">
+    <div class="flex flex-wrap gap-1 justify-evenly">
       
         <div v-for="t in trainData" class="mt-20 text-center text-white px-6 py-4">
             <div class="flex bg-[#c60c30] mb-5 p-3 w-full max-w-xl">

@@ -3,17 +3,15 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: IFC;
-    src: url("IFC RAILROAD 2.ttf");
+    font-family: Montserrat;
+    src: url("https://fonts.googleapis.com/css?family=Montserrat");
 }
 
 #app {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.7)), url("../public/background_img.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    font-family: IFC;
+    background: #00a1de;
+    font-family: Montserrat;
     background-size: auto;
-    height: 100vh;
+    height: 100%;
     width: 100%;
 }
 

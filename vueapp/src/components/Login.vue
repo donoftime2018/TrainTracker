@@ -1,11 +1,11 @@
 <script setup>
-   
+
 </script>
 
 <template>
     <div class="flex justify-center">
         <div class="mt-20 w-full max-w-xl">
-            <form class="bg-[#EE0034] text-white shadow-md rounded px-12 pt-6 pb-8 mb-4">
+            <form class="bg-[#c60c30] text-white shadow-md rounded px-12 pt-6 pb-8 mb-4">
                 <div class="mb-4">
                     <h1 class="text-center font-bold text-2xl underline">Login</h1>
                 </div>
@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="mb-4 flex justify-center">
-                    <button type="submit" class="bg-[#0039a6] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    <button type="submit" class="bg-[#00a1de] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                         Sign In
                     </button>
                 </div>

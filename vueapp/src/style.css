@@ -8,11 +8,11 @@
 }
 
 #app {
-    background: #00a1de;
     font-family: Montserrat;
-    background-size: auto;
-    height: 100%;
-    width: 100%;
+}
+
+body {
+    background-color: #00a1de;
 }
 
 a:hover {

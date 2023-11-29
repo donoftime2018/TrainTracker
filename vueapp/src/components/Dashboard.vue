@@ -59,6 +59,9 @@
                 this.currentTime = response.data.ctatt.tmst
                 this.errMessage = response.data.ctatt.errNm
             })
+        },
+        beforeMount() {
+            this.currentTime = "Loading..."
         }
     }
 </script>

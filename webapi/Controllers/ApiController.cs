@@ -22,15 +22,12 @@ namespace webapi.Controllers
         [Route("api/getStationData")]
         public IActionResult GetData()
         {
-                XmlDocument doc = new XmlDocument();
-                doc.Load("https://lapi.transitchicago.com/api/1.0/ttarrivals.aspx?key=f3668ac334484bc88b6b2e7778a013bd&mapid=40380");
+            XmlDocument doc = new XmlDocument();
+            doc.Load("https://lapi.transitchicago.com/api/1.0/ttarrivals.aspx?key=f3668ac334484bc88b6b2e7778a013bd&mapid=40380");
 
-                
-                string jsonText = JsonConvert.SerializeXmlNode(doc);
-                dynamic data = JObject.Parse(jsonText);
-               //data["ctatt"]["tmst"] = DateTime.ParseExact(data["ctatt"]["time"], "yyyyMMdd HH:mm:ss", System.Globalization.CultureInfo.CurrentCulture);
-           
-
+            string jsonText = JsonConvert.SerializeXmlNode(doc);
+            dynamic data = JObject.Parse(jsonText);
+            
             return Ok(data);
            
                  

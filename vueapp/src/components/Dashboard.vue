@@ -50,6 +50,8 @@
             this.trainData = response.data.ctatt.eta
             this.currentTime = response.data.ctatt.tmst
             this.errMessage = response.data.ctatt.errNm
+
+            
         },
 
         async updated() {
@@ -61,6 +63,7 @@
         },
         beforeMount() {
             this.currentTime = "Loading..."
-        }
+        } 
+        
     }
 </script>

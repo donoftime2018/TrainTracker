@@ -1,7 +1,3 @@
-<script setup>
-
-</script>
-
 <template>
     <div class="flex justify-center">
         <div class="mt-20 w-full max-w-xl">
@@ -14,14 +10,14 @@
                     <label class="text-center block text-lg font-bold mb-2" for="username">
                         Username
                     </label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username goes here...">
+                    <input v-model="form.username" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username goes here...">
                 </div>
 
                 <div class="mb-4">
                     <label class="text-center block text-lg font-bold mb-2" for="password">
                         Password
                     </label>
-                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Password goes here...">
+                    <input v-model="form.password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Password goes here...">
                 </div>
 
                 <div class="mb-4 flex justify-center">
@@ -41,5 +37,37 @@
             </form>
         </div>
     </div>
-    
+
 </template>
+
+<script>
+    import { ref, onMounted, onUpdated } from 'vue';
+    import axios from 'axios';
+
+    export default {
+        data() {
+            return {
+                form: {
+                    username: '',
+                    password: ''
+                }
+            }
+         
+        },
+
+        async updated() {
+            console.log(username.value)
+            console.log(password.value)
+
+            const data = {
+                username,
+                password
+            }
+
+            let response = await axios.post("http://localhost:5118/api/loginUser", { data })
+            console.log(response)
+
+        }
+    }
+
+</script>

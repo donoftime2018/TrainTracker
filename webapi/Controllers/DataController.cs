@@ -1,23 +1,14 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System.Xml;
-using Microsoft.AspNetCore.Mvc;
-using System.Globalization;
-using System.Text.Json.Nodes;
-using System.Collections;
-using System.Xml.Linq;
-using NPOI.SS.Formula.Functions;
-using Microsoft.AspNetCore.Mvc.TagHelpers;
-using System.Data;
 using Newtonsoft.Json.Linq;
+using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace webapi.Controllers
 {
     [ApiController]
-    public class ApiController : ControllerBase
+    public class DataController : ControllerBase
     {
-        //private HttpResponseMessage res;
-
         [HttpGet]
         [Route("api/getStationData")]
         public IActionResult GetData()
